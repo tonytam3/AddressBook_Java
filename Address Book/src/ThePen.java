@@ -97,10 +97,8 @@ public class ThePen {
 			if (currentArray[i][0] != null) {
 				System.out.println("\n First Name: "+currentArray[i][0]+" Last Name: "+currentArray[i][1]+" PhoneNumber: "+currentArray[i][2]+" Address: "+currentArray[i][3]);
 			}
-			else {
-				System.out.println("\n End of List");
-			}
 		}
+		System.out.println("\n End of List");
 		
 	}
 	
@@ -124,7 +122,6 @@ public class ThePen {
 	private String[][] bookTest(String arr[][],String arr1[][]) { // This Function is for testing if there's enough empty spaces for additional entries
 
 		if (arr[arr.length-1][0]!=null&&arr[arr.length][0]==null) {arr=increaseArraySize(arr);};
-
 		
 		boolean entryAdd = false;
 		
@@ -177,12 +174,16 @@ public class ThePen {
 	private void selectSortNames(String currentArray[][],int arrayColumn) {
 		for (int i=0; i<currentArray.length-1;i++) {
 			int minIndex = i;
+
 			if (currentArray[i][arrayColumn] != null) {
 				for (int j=i+1; j<currentArray.length; j++) {
+					
 					if(currentArray[j][arrayColumn]!=null) {
+						
 						if(currentArray[j][arrayColumn].compareTo(currentArray[minIndex][arrayColumn]) < 0) {
 						minIndex = j;
 						}
+						
 					}
 				}
 			}
